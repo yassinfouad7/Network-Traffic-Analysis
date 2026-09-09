@@ -1,0 +1,16 @@
+packet,relative_time_s,protocol,source,destination,summary
+1,0.000,ARP,192.168.56.10,192.168.56.1,Who has 192.168.56.1? Tell 192.168.56.10
+2,0.012,ARP,192.168.56.1,192.168.56.10,192.168.56.1 is at 08:00:27:aa:bb:cc
+3,0.120,DNS,192.168.56.10,192.168.56.53,Standard query A training.example
+4,0.145,DNS,192.168.56.53,192.168.56.10,Standard query response A training.example A 203.0.113.80
+5,0.220,TCP,192.168.56.10,203.0.113.80,51514 -> 80 [SYN] Seq=0
+6,0.245,TCP,203.0.113.80,192.168.56.10,"80 -> 51514 [SYN, ACK] Seq=0 Ack=1"
+7,0.258,TCP,192.168.56.10,203.0.113.80,51514 -> 80 [ACK] Seq=1 Ack=1
+8,0.300,HTTP,192.168.56.10,203.0.113.80,GET /lab/index.html HTTP/1.1 Host: training.example
+9,0.342,HTTP,203.0.113.80,192.168.56.10,HTTP/1.1 200 OK (text/html)
+10,0.355,TCP,192.168.56.10,203.0.113.80,51514 -> 80 [ACK] HTTP response acknowledged
+11,0.370,TCP,203.0.113.80,192.168.56.10,"80 -> 51514 [FIN, ACK]"
+12,0.385,TCP,192.168.56.10,203.0.113.80,"51514 -> 80 [FIN, ACK]"
+13,0.398,TCP,203.0.113.80,192.168.56.10,80 -> 51514 [ACK] Connection closed
+14,0.500,ICMP,192.168.56.10,203.0.113.80,"Echo (ping) request id=0x4242, seq=1"
+15,0.528,ICMP,203.0.113.80,192.168.56.10,"Echo (ping) reply id=0x4242, seq=1"
