@@ -1,40 +1,18 @@
-# Wireshark Display Filters for this lab
+# Filters I used while working through the capture
 
-# Show only ARP traffic
 arp
-
-# Show DNS queries and responses
 dns
-
-# DNS query for the lab hostname
 dns.qry.name == "training.example"
 
-# Show TCP traffic
 tcp
-
-# Show only the TCP conversation to port 80
 tcp.port == 80
-
-# TCP SYN packets that are not ACKs
 tcp.flags.syn == 1 && tcp.flags.ack == 0
 
-# Show HTTP traffic
 http
-
-# Show HTTP requests only
 http.request
-
-# Show HTTP responses only
 http.response
 
-# Show ICMP ping traffic
 icmp
 
-# Focus on the lab client
 ip.addr == 192.168.56.10
-
-# Focus on the lab server
 ip.addr == 203.0.113.80
-
-# One TCP stream
-tcp.stream eq 0
